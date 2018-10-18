@@ -2,7 +2,7 @@
 ## [Docker Commands](https://docs.docker.com/engine/reference/commandline/docker/#child-commands)
 
 ### [docker exec](https://docs.docker.com/engine/reference/commandline/exec/) | Run a command in a running container
-#### Conect to a docker container
+#### - Conect to a docker container
 ```bash
 sudo docker exec -i -t dd-agent /bin/bash
 ```
