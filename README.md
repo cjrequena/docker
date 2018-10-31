@@ -23,8 +23,14 @@ docker build [OPTIONS] PATH | URL | -
 docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 ```
 ### Options
-    --detach -d Detached mode: run command in the background
-    -it This will not make the container you started shut down immediately, as it will create a pseudo-TTY session (-t) and keep STDIN open (-i)
+    --detach,-d 		Detached mode: run command in the background
+    --detach-keys 		Override the key sequence for detaching a container
+    --env,-e            Set environment variables
+    --interactive,-i	Keep STDIN open even if not attached
+    --privileged 		Give extended privileges to the command
+    --tty,-t     		Allocate a pseudo-TTY
+    --user,-u    		Username or UID (format: <name|uid>[:<group|gid>])
+    --workdir,-w 		Working directory inside the container
 ### How to conect to a docker container
 ```bash
 sudo docker exec -i -t [CONTAINER ID] /bin/bash
@@ -37,7 +43,12 @@ sudo docker exec -i -t [CONTAINER ID] /bin/bash
 docker images [OPTIONS] [REPOSITORY[:TAG]]
 ```
 ### Options
-    -q Only show numeric IDs
+    --all,-a 		Show all images (default hides intermediate images)
+    --digests 		Show digests
+    --filter,-f 	Filter output based on conditions provided
+    --format 		Pretty-print images using a Go template
+    --no-trunc 		Don’t truncate output
+    --quiet,-q 		Only show numeric IDs
 
 ## [docker inspect](https://docs.docker.com/engine/reference/commandline/inspect/)
 *Return low-level information on Docker objects*
