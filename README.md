@@ -1,14 +1,37 @@
 # Index
 
-1. [Docker Commands](#docker-commands)
+[Docker Commands](#docker-commands)
+    
+[docker attach](#docker-attatch)
 
-2. [Docker Machine Commands](#docker-machine-commands)
+[docker build](#docker-build)
 
-3. [Docker Tips and Tricks](#docker-tips-and-tricks)
+[docker exec](#docker-exec)
+
+[docker images](#docker-images)
+
+[docker inspect](#docker-inspect)
+
+[docker logs](#docker-inspect)
+
+[docker ps](#docker-ps)
+
+[docker rmi](#docker-rmi)
+
+[docker rm](#docker-rm)
+
+[docker run](#docker-run)
+
+[docker stop](#docker-stop)
+    
+[Docker Machine Commands](#docker-machine-commands)
+
+[Docker Tips and Tricks](#docker-tips-and-tricks)
 
 
-# [Docker Commands](https://docs.docker.com/engine/reference/commandline/docker/#child-commands)
+# Docker Commands
 
+## [Docker Commands](https://docs.docker.com/engine/reference/commandline/docker/#child-commands)
 
 ## [docker attach](https://docs.docker.com/engine/reference/commandline/attach/)
 *Attach local standard input, output, and error streams to a running container*
