@@ -1,7 +1,9 @@
 # [Docker Commands](https://docs.docker.com/engine/reference/commandline/docker/#child-commands)
 
+
 ## [docker attach](https://docs.docker.com/engine/reference/commandline/attach/)
 *Attach local standard input, output, and error streams to a running container*
+
 
 ## [docker build](https://docs.docker.com/engine/reference/commandline/build/)
 *Build an image from a Dockerfile*
@@ -16,10 +18,11 @@ docker build [OPTIONS] PATH | URL | -
     --rm            Remove intermediate containers after a successful build (this is true) by default
     --tag,-t        Name and optionally a tag in the ‘name:tag’ format
 
+
 ## [docker exec](https://docs.docker.com/engine/reference/commandline/exec/)
 *Run a command in a running container*
 ### Usage
-```bash
+```sh
 docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
 ```
 ### Options
@@ -32,14 +35,15 @@ docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
     --user,-u    		Username or UID (format: <name|uid>[:<group|gid>])
     --workdir,-w 		Working directory inside the container
 ### How to conect to a docker container
-```bash
+```sh
 sudo docker exec -i -t [CONTAINER ID] /bin/bash
 ```
+
 
 ## [docker images](https://docs.docker.com/engine/reference/commandline/images/)
 *List all downloaded/created images*
 ### Usage
-```bash
+```sh
 docker images [OPTIONS] [REPOSITORY[:TAG]]
 ```
 ### Options
@@ -49,6 +53,7 @@ docker images [OPTIONS] [REPOSITORY[:TAG]]
     --format 		Pretty-print images using a Go template
     --no-trunc 		Don’t truncate output
     --quiet,-q 		Only show numeric IDs
+
 
 ## [docker inspect](https://docs.docker.com/engine/reference/commandline/inspect/)
 *Return low-level information on Docker objects*
@@ -61,10 +66,11 @@ docker inspect [OPTIONS] NAME|ID [NAME|ID...]
     --size,-s       Display total file sizes if the type is container
     --type          Return JSON for specified type
 
+
 ## [docker logs](https://docs.docker.com/engine/reference/commandline/logs/)
 *Fetch the logs of a container*
 ### Usage
-```bash
+```sh
 docker logs [OPTIONS] CONTAINER
 ```
 ### Options
@@ -75,10 +81,11 @@ docker logs [OPTIONS] CONTAINER
     --timestamps,-t         Show timestamps
     --until                 Show logs before a timestamp (e.g. 2013-01-02T13:23:37) or relative (e.g. 42m for 42 minutes)
 
+
 ## [docker ps](https://docs.docker.com/engine/reference/commandline/ps/)
 *List containers*
 ### Usage
-```bash
+```sh
 docker ps [OPTIONS]
 ```
 ### Options
@@ -91,20 +98,22 @@ docker ps [OPTIONS]
     --quiet,-q 		Only display numeric IDs
     --size,-s 		Display total file sizes
         
+
 ## [docker rmi](https://docs.docker.com/engine/reference/commandline/rmi/)
 *Remove one or more images*
 ### Usage
-```bash
+```sh
 docker rmi [OPTIONS] IMAGE [IMAGE...]
 ```
 ### Options
     --force,-f 		Force removal of the image
     --no-prune 		Do not delete untagged parents
 
+
 ## [docker rm](https://docs.docker.com/engine/reference/commandline/rm/)
 *Remove one or more containers*
 ### Usage
-```bash
+```sh
 docker rm [OPTIONS] CONTAINER [CONTAINER...]
 ```
 ### Options
@@ -112,28 +121,63 @@ docker rm [OPTIONS] CONTAINER [CONTAINER...]
     --link,-l 		Remove the specified link
     --volumes,-v 	Remove the volumes associated with the container
 
+
 ## [docker run](https://docs.docker.com/engine/reference/commandline/run/)
 *Run a command in a new container*
 ### Usage
-```bash
+```sh
 docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 ```
 ### [Options](https://docs.docker.com/engine/reference/commandline/run/#options)
     
 
-## [docker stop](https://docs.docker.com/engine/reference/commandline/stop/) | ( Stop one or more running containers )
-## Stop all containers
-```bash
-docker stop $(docker ps -aq)
+## [docker stop](https://docs.docker.com/engine/reference/commandline/stop/)
+*Stop one or more running containers*
+### Usage
+```sh
+docker stop [OPTIONS] CONTAINER [CONTAINER...]
 ```
-## Delete all images and containers
-```bash
-docker stop $(docker ps -aq) && docker rm $(docker ps -aq) && docker rmi $(docker images -q)
-```
+### Options
+    --time,-t   Seconds to wait for stop before killing it
 
 ------------------------------------------------------------------------------------------------------------------------
 # Docker Machine Commands
+
 ## [Docker Machine Reference](https://docs.docker.com/machine/reference/)
 
+
 ## [docker-machine active](https://docs.docker.com/machine/reference/active/)
+
+
 ## [docker-machine create](https://docs.docker.com/machine/reference/create/)
+
+------------------------------------------------------------------------------------------------------------------------
+# Docker Tips and Tricks
+A collection of useful tips and tricks for Docker.
+
+## Remove all containers
+**NOTE:** This will remove ALL your containers.
+```sh
+docker rm $(docker ps -a -q)
+```
+
+## Remove all untagged containers
+```sh
+docker rmi $(docker images | grep '^<none>' | awk '{print $3}')
+```
+
+## See all space Docker take up
+```sh
+docker system df
+```
+
+## Get IP address of running container
+```sh
+docker inspect [CONTAINER ID] | grep -wm1 IPAddress | cut -d '"' -f 4
+```
+
+## Kill all running containers
+```sh
+docker kill $(docker ps -q)
+```
+
