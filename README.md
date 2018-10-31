@@ -1,8 +1,11 @@
+# Index
+
 1. [Docker Commands](#docker-commands)
 
 2. [Docker Machine Commands](#docker-machine-commands)
 
 3. [Docker Tips and Tricks](#docker-tips-and-tricks)
+
 
 # [Docker Commands](https://docs.docker.com/engine/reference/commandline/docker/#child-commands)
 
