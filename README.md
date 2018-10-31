@@ -2,7 +2,7 @@
 
 [Docker Commands](#docker-commands)
     
-[docker attach](#docker-attatch)
+[docker attach](#docker-attach)
 
 [docker build](#docker-build)
 
@@ -12,7 +12,7 @@
 
 [docker inspect](#docker-inspect)
 
-[docker logs](#docker-inspect)
+[docker logs](#docker-logs)
 
 [docker ps](#docker-ps)
 
