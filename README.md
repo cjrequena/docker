@@ -1,4 +1,4 @@
-[Docker Commands](#[docker-commands])
+[Docker Commands](#docker-commands)
 
 [Docker Machine Commands](#docker-machine-commands)
 
