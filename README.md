@@ -1,6 +1,6 @@
 # Index
 
-[Docker Tips and Tricks](#docker-tips-and-tricks)
+[Docker Tips and Tricks](#docker-tips-and-tricks) *(Attach local standard input, output, and error streams to a running container)*
 
 [Docker Commands](#docker-commands)
 
