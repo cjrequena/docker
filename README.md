@@ -34,10 +34,6 @@ docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
     --tty,-t     		Allocate a pseudo-TTY
     --user,-u    		Username or UID (format: <name|uid>[:<group|gid>])
     --workdir,-w 		Working directory inside the container
-### How to conect to a docker container
-```sh
-sudo docker exec -i -t [CONTAINER ID] /bin/bash
-```
 
 
 ## [docker images](https://docs.docker.com/engine/reference/commandline/images/)
@@ -155,15 +151,38 @@ docker stop [OPTIONS] CONTAINER [CONTAINER...]
 # Docker Tips and Tricks
 A collection of useful tips and tricks for Docker.
 
+## Stp all containers
+**NOTE:** This will stop ALL your containers.
+```sh
+docker stop $(docker ps -aq)
+```
+
 ## Remove all containers
 **NOTE:** This will remove ALL your containers.
 ```sh
 docker rm $(docker ps -a -q)
 ```
 
+## Remove all images
+**NOTE:** This will remove ALL your images.
+```sh
+docker rmi $(docker images -q)
+```
+
+## Stop and remove all images and containers
+**NOTE:** This will remove ALL your images/containers.
+```sh
+docker stop $(docker ps -aq) && docker rm $(docker ps -aq) && docker rmi $(docker images -q)
+```
+
 ## Remove all untagged containers
 ```sh
 docker rmi $(docker images | grep '^<none>' | awk '{print $3}')
+```
+
+## Connect to a docker container
+```sh
+sudo docker exec -i -t [CONTAINER ID] /bin/bash
 ```
 
 ## See all space Docker take up
