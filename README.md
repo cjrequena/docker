@@ -1,7 +1,9 @@
 # Index
 
+[Docker Tips and Tricks](#docker-tips-and-tricks)
+
 [Docker Commands](#docker-commands)
-    
+
 [docker attach](#docker-attach)
 
 [docker build](#docker-build)
@@ -26,7 +28,7 @@
     
 [Docker Machine Commands](#docker-machine-commands)
 
-[Docker Tips and Tricks](#docker-tips-and-tricks)
+
 
 
 # Docker Commands
