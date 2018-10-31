@@ -1,3 +1,9 @@
+[Docker Commands](#Docker Commands)
+
+[Docker Machine Commands](#Docker Machine Commands)
+
+[Docker Tips and Tricks](#Docker Tips and Tricks)
+
 # [Docker Commands](https://docs.docker.com/engine/reference/commandline/docker/#child-commands)
 
 
@@ -151,7 +157,7 @@ docker stop [OPTIONS] CONTAINER [CONTAINER...]
 # Docker Tips and Tricks
 A collection of useful tips and tricks for Docker.
 
-## Stp all containers
+## Stop all containers
 **NOTE:** This will stop ALL your containers.
 ```sh
 docker stop $(docker ps -aq)
