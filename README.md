@@ -6,7 +6,7 @@
 
 [docker attach](#docker-attach)
 
-[docker build](#docker-build)
+[docker build](#docker-build) *(Build an image from a Dockerfile)*
 
 [docker exec](#docker-exec)
 
