@@ -1,8 +1,8 @@
-[Docker Commands](#docker-commands)
+1. [Docker Commands](#docker-commands)
 
-[Docker Machine Commands](#docker-machine-commands)
+2. [Docker Machine Commands](#docker-machine-commands)
 
-[Docker Tips and Tricks](#docker-tips-and-tricks)
+3. [Docker Tips and Tricks](#docker-tips-and-tricks)
 
 # [Docker Commands](https://docs.docker.com/engine/reference/commandline/docker/#child-commands)
 
