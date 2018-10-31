@@ -1,10 +1,10 @@
 # Index
 
-[Docker Tips and Tricks](#docker-tips-and-tricks) *(Attach local standard input, output, and error streams to a running container)*
+[Docker Tips and Tricks](#docker-tips-and-tricks)
 
 [Docker Commands](#docker-commands)
 
-[docker attach](#docker-attach)
+[docker attach](#docker-attach) *(Attach local standard input, output, and error streams to a running container)*
 
 [docker build](#docker-build) *(Build an image from a Dockerfile)*
 
